@@ -1,0 +1,27 @@
+dmd -i rot
+dmd -i rot2
+dmd -i swap_
+
+./swap_ base 27 41 > temp1 #rf
+./swap_ temp1 28 42 > temp2 #tg ... in thoery
+##./swap_ temp2 29 43 > temp1 #yh
+./swap_ temp2 30 44 > temp1
+./swap_ temp1 31 45 > temp2
+./swap_ temp2 32 46 > temp1 # ol?
+
+./rot2 temp1 5 29 35 >temp2 #shift toprow 2
+cp temp2 temp1; rm temp2
+./rot2 temp1 5 15 21 >temp2 #shift numberrow 2
+cp temp2 temp1; rm temp2
+./rot2 temp1 4 43 48 >temp2 #homerow?
+cp temp2 temp1; rm temp2
+./rot2 temp1 3 57 61 >temp2
+cp temp2 temp1; rm temp2
+
+./swap_ temp1 43 61 > temp2
+./rot temp2 1 58 57 44 >temp1
+
+cp temp1 out
+rm *.o
+rm temp1
+rm temp2

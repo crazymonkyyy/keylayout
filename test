@@ -1,0 +1,3 @@
+xmodmap $1
+sleep 60s
+xmodmap base
